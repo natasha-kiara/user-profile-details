@@ -99,7 +99,7 @@ public class UserProfile extends javax.swing.JFrame {
 
         province.setBackground(new java.awt.Color(255, 255, 255));
         province.setForeground(new java.awt.Color(204, 204, 204));
-        province.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Select Province", "Ontario", "Quebec", "British Columbia", "Alberta" }));
+        province.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"", "Ontario", "Quebec", "British Columbia", "Alberta" }));
         province.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 provinceActionPerformed(evt);
@@ -282,7 +282,7 @@ public class UserProfile extends javax.swing.JFrame {
         return true;
     }
     
-    //return true or false if age and phone number are integers and phone number format is correct
+    //return true or false if age is an integer
     private boolean validateNumberInputs(JTextField field, String fieldName){
         //validate if field is an integer. if not show error message
         try{
@@ -323,28 +323,30 @@ public class UserProfile extends javax.swing.JFrame {
        }
        
         if(!termsCheckBox.isSelected()){
-            JOptionPane.showMessageDialog(this, "you must agree to terms and condtions"); 
+            JOptionPane.showMessageDialog(this, "You must agree to terms and condtions"); 
            return;
         }else{
              user.setTerms("Accepted");   
            
         }
-        
+        //get the first name and last name
         String fullName = user.getFirstName()+" " + user.getLastName();
         //get the uploaded photo
         ImageIcon uploadedPhoto = user.getProfilePic();
-       System.out.print(uploadedPhoto);
+       //combine the profile details
         String profileDetails = "Full name: "+ fullName + "\n" 
                 + "Age: " + user.getAge()+"\n" +
                 "Phone Number: " + user.getPhoneNumber() 
                 + "\n" + "Email: "+user.getEmail() +"\n"
                 + "Province: " + user.getProvince();
+        //put the profile details into an object with the profile photo
         Object[] message = {
             "Profile Successfully Created \n",
             "Your profile details: \n", 
             uploadedPhoto , 
             profileDetails
         };
+        
         JOptionPane.showMessageDialog(this, message);
     }//GEN-LAST:event_createProfileBtnActionPerformed
 

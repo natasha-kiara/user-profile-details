@@ -269,7 +269,7 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] {&quot;Select Province&quot;, &quot;Ontario&quot;, &quot;Quebec&quot;, &quot;British Columbia&quot;, &quot;Alberta&quot; })" type="code"/>
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] {&quot;&quot;, &quot;Ontario&quot;, &quot;Quebec&quot;, &quot;British Columbia&quot;, &quot;Alberta&quot; })" type="code"/>
             </Property>
           </Properties>
           <Events>
